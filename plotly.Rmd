@@ -1,0 +1,35 @@
+---
+title: "Plotly Assignment"
+author: "Sandra Cuffee"
+date: "January 1, 2018"
+output: 
+  ioslides_presentation: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Airquality Data
+
+```{r airquality, echo = TRUE}
+data(airquality)
+str(airquality)
+```
+
+## Airquality 3D Scatterplot
+
+
+Ozone, Temp(Temperature), and Wind are represented in the 3D scatter plot by Month. Note: the NAs have been removed.
+
+
+```{r,echo =FALSE, message = FALSE, warning = FALSE}
+
+suppressWarnings(library(plotly))
+
+plot_ly(na.omit(airquality), x = ~Ozone, y = ~Temp,z = ~Wind, type = "scatter3d", mode = "markers", color = ~Month)
+```
+
+
+
