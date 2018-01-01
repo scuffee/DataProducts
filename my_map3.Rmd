@@ -95,7 +95,7 @@ footballTeams<-c(
 "<a href = 'http://www.houstontexans.com/'>Houston Texans</a>",
 "<a href = 'http://www.colts.com/'>Indianapolis Colts</a>",
 "<a href = 'http://www.jaguars.com/'>jacksonville Jaguars</a>",
-"<a href = 'http://www.chiefs.com/,>Kansas City Chiefs</a>",
+"<a href = 'http://www.chiefs.com/'>Kansas City Chiefs</a>",
 "<a href = 'http://www.chargers.com/'>Los Angeles Chargers</a>",
 "<a href = 'http://www.therams.com/'>Los Angeles Rams</a>",
 "<a href = 'http://www.miamidolphins.com/'>Miami Dolphins</a>",
