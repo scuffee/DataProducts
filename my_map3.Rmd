@@ -1,0 +1,136 @@
+---
+title: "NFL Stadiums"
+author: "Sandra Cuffee"
+date: "December 31, 2017"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+
+
+
+```{r, eval = FALSE, echo = FALSE }
+library(leaflet)
+library(mapview)
+
+footballTeams<-c(
+"<a href ='http://www.azcardinals.com/'>Arizona Cardinals</a>",
+"<a href = 'http://www.atlantafalcons.com/'>Atlanta Falcons</a>",
+"<a href = 'http://www.baltimoreravens.com/'>Baltimore Ravens</a>",
+"<a href = 'http://www.buffalobills.com/'>Buffalo Bills</a>",
+"<a href = 'http://www.panthers.com/'> Carolina panthers</a> ",
+"<a href = 'http://www.chicagobears.com/'>Chicago Bears</a>",
+"<a href = 'http://www.bengals.com/'>Cincinnati Bengals</a>",
+"<a href = 'http://www.clevelandbrowns.com/'>Cleveland Browns</a>",
+"<a href = 'http://www.dallascowboys.com/'>Dallas Cowboys</a>",
+"<a href = 'http://www.denverbroncos.com/'>Denver Broncos</a>",
+"<a href = 'http://www.detroitlions.com/'>Detroit Lions</a>",
+"<a href = 'http://www.packers.com/'>Green Bay Packers</a>",
+"<a href = 'http://www.houstontexans.com/'>Houston Texans</a>",
+"<a href = 'http://www.colts.com/'>Indianapolis Colts</a>",
+"<a href = 'http://www.jaguars.com/'>jacksonville Jaguars</a>",
+"<a href = 'http://www.chiefs.com/,>Kansas City Chiefs</a>",
+"<a href = 'http://www.chargers.com/'>Los Angeles Chargers</a>",
+"<a href = 'http://www.therams.com/'>Los Angeles Rams</a>",
+"<a href = 'http://www.miamidolphins.com/'>Miami Dolphins</a>",
+"<a href = 'http://www.vikings.com/'>Minnesota Vikings</a>",
+"<a href = 'http://www.patriots.com/'>New England patriots</a>",
+"<a href = 'http://www.neworleanssaints.com/'>New Orleans Saints</a>",
+"<a href = 'http://www.giants.com/'>New York Giants</a>",
+"<a href = 'http://www.newyorkjets.com/'>New York Jets</a>",
+"<a href = 'http://www.raiders.com/'>Oakland Raiders</a>",
+"<a href = 'http://www.philadelphiaeagles.com/'>Philadelphia Eagles</a>",
+"<a href = 'http://www.49ers.com/'>San Francisco 49ers>/a>",
+"<a href = 'http://www.seahawks.com/'>Seattle Seahawks</a>",
+"<a href = 'http://www.buccaneers.com/'>Tampa Bay Buccaneers</a>",
+"<a href = 'http://www.ti'tansonline.com/'>Tennessee Titans</a>",
+"<a href = 'http://www.redskins.com/'>Washington Redskins</a>"
+
+)
+
+footballIcon <- makeIcon(
+  
+iconUrl = "C:Users/Sandra/documents/Dataprducts/DataProducts/national-football-league-filledpng",
+
+iconWidth = 31*215/230, iconHeight = 31,
+iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+footballLatLong <- data.frame(
+  lat = c(33.5276, 33.7577, 39.2780, 42.7738, 35.2258, 41.8623, 39.0955, 41.5061, 32.7473, 39.7439, 42.3400, 44.5013, 29.6847, 39.7601, 30.3239, 39.0489,33.8586, 34.0141, 25.9580, 44.9743, 42.0909, 29.9511, 40.8128, 40.8128, 42.1889, 39.9008, 37.4023, 47.5952, 27.9759, 36.1665, 38.9076),
+  lng= c(-112.2626, -84.4008, -76.6227, -78.7870, -80.8528, -87.6167, -84.5161, -81.6995, -97.0945, -105.0201, -83.0456, -88.0622, -95.4107, -86.1639, -81.6373, -94.4839, -118.2566, -118.2879, -80.2389, -93.2597, -71.2643, -90.0812, -74.0742, -74.0742, -122.691403, -75.1675, -121.9690, -122.3316, -82.50335, -86.7713, -76.8645)
+)
+footballLatLong %>%
+  leaflet() %>%
+  addTiles () %>%
+  addMarkers(lat =33.5276, lng = -112.2626, popup = "Arizona Cardinals" )
+
+
+
+
+
+```
+
+## NFL Stadiums
+
+```{r, echo = FALSE,comment = "" }
+
+suppressWarnings(library(leaflet))
+
+
+
+footballTeams<-c(
+"<a href ='http://www.azcardinals.com/'>Arizona Cardinals</a>",
+"<a href = 'http://www.atlantafalcons.com/'>Atlanta Falcons</a>",
+"<a href = 'http://www.baltimoreravens.com/'>Baltimore Ravens</a>",
+"<a href = 'http://www.buffalobills.com/'>Buffalo Bills</a>",
+"<a href = 'http://www.panthers.com/'> Carolina panthers</a> ",
+"<a href = 'http://www.chicagobears.com/'>Chicago Bears</a>",
+"<a href = 'http://www.bengals.com/'>Cincinnati Bengals</a>",
+"<a href = 'http://www.clevelandbrowns.com/'>Cleveland Browns</a>",
+"<a href = 'http://www.dallascowboys.com/'>Dallas Cowboys</a>",
+"<a href = 'http://www.denverbroncos.com/'>Denver Broncos</a>",
+"<a href = 'http://www.detroitlions.com/'>Detroit Lions</a>",
+"<a href = 'http://www.packers.com/'>Green Bay Packers</a>",
+"<a href = 'http://www.houstontexans.com/'>Houston Texans</a>",
+"<a href = 'http://www.colts.com/'>Indianapolis Colts</a>",
+"<a href = 'http://www.jaguars.com/'>jacksonville Jaguars</a>",
+"<a href = 'http://www.chiefs.com/,>Kansas City Chiefs</a>",
+"<a href = 'http://www.chargers.com/'>Los Angeles Chargers</a>",
+"<a href = 'http://www.therams.com/'>Los Angeles Rams</a>",
+"<a href = 'http://www.miamidolphins.com/'>Miami Dolphins</a>",
+"<a href = 'http://www.vikings.com/'>Minnesota Vikings</a>",
+"<a href = 'http://www.patriots.com/'>New England patriots</a>",
+"<a href = 'http://www.neworleanssaints.com/'>New Orleans Saints</a>",
+"<a href = 'http://www.giants.com/'>New York Giants</a>",
+"<a href = 'http://www.newyorkjets.com/'>New York Jets</a>",
+"<a href = 'http://www.raiders.com/'>Oakland Raiders</a>",
+"<a href = 'http://www.philadelphiaeagles.com/'>Philadelphia Eagles</a>",
+"<a href = 'http://www.49ers.com/'>San Francisco 49ers>/a>",
+"<a href = 'http://www.seahawks.com/'>Seattle Seahawks</a>",
+"<a href = 'http://www.buccaneers.com/'>Tampa Bay Buccaneers</a>",
+"<a href = 'http://www.ti'tansonline.com/'>Tennessee Titans</a>",
+"<a href = 'http://www.redskins.com/'>Washington Redskins</a>"
+
+)
+
+footballIcon <- makeIcon(
+  
+iconUrl = "C:/Users/Sandra/Documents/Dataproducts/DataProducts/Football_Icon.svg.png",
+
+iconWidth = 31*215/230, iconHeight = 31,
+iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+footballLatLong <- data.frame(
+  lat = c(33.5276, 33.7577, 39.2780, 42.7738, 35.2258, 41.8623, 39.0955, 41.5061, 32.7473, 39.7439, 42.3400, 44.5013, 29.6847, 39.7601, 30.3239, 39.0489,33.8586, 34.0141, 25.9580, 44.9743, 42.0909, 29.9511, 40.8128, 40.8128, 42.1889, 39.9008, 37.4023, 47.5952, 27.9759, 36.1665, 38.9076),
+  lng= c(-112.2626, -84.4008, -76.6227, -78.7870, -80.8528, -87.6167, -84.5161, -81.6995, -97.0945, -105.0201, -83.0456, -88.0622, -95.4107, -86.1639, -81.6373, -94.4839, -118.2566, -118.2879, -80.2389, -93.2597, -71.2643, -90.0812, -74.0742, -74.0742, -122.691403, -75.1675, -121.9690, -122.3316, -82.50335, -86.7713, -76.8645)
+)
+footballLatLong %>%
+  leaflet() %>%
+  addTiles () %>%
+  addMarkers(icon = footballIcon, popup = footballTeams )
+
+
+  
+
+```
